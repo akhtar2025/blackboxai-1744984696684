@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasar-dasar Safety Riding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="flex items-center">
+                        <i class="fas fa-motorcycle text-2xl text-blue-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Safety Riding</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800 mr-6">
+                        <i class="fas fa-arrow-left mr-2"></i>Kembali
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Module Header -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Dasar-dasar Safety Riding</h1>
+            <p class="text-gray-600">Pelajari prinsip-prinsip dasar berkendara yang aman untuk menghindari kecelakaan.</p>
+        </div>
+
+        <!-- Module Content -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <img src="https://images.pexels.com/photos/2611690/pexels-photo-2611690.jpeg" 
+                alt="Safety Riding" 
+                class="w-full h-64 object-cover rounded-lg mb-6">
+
+            <div class="space-y-6">
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">1. Persiapan Sebelum Berkendara</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Periksa kondisi motor (rem, ban, lampu, dll)</li>
+                        <li>Gunakan perlengkapan safety riding lengkap:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Helm SNI</li>
+                                <li>Jaket pelindung</li>
+                                <li>Sarung tangan</li>
+                                <li>Sepatu tertutup</li>
+                            </ul>
+                        </li>
+                        <li>Pastikan kondisi fisik dan mental siap berkendara</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">2. Posisi Berkendara yang Benar</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Posisi duduk tegak dan rileks</li>
+                        <li>Kedua tangan menggenggam handle dengan kuat</li>
+                        <li>Kaki siap di pedal rem dan persneling</li>
+                        <li>Jaga jarak pandang yang baik</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. Aturan Dasar di Jalan</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Patuhi rambu dan marka jalan</li>
+                        <li>Gunakan lampu sein saat berbelok</li>
+                        <li>Jaga jarak aman dengan kendaraan lain</li>
+                        <li>Berkendara sesuai batas kecepatan</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Quiz Dasar Safety Riding</h2>
+            <form id="quizForm" class="space-y-6">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">1. Apa yang harus diperiksa sebelum berkendara?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>Hanya kondisi ban</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>Rem, ban, dan lampu</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>Tidak perlu memeriksa apa-apa</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">2. Perlengkapan safety riding yang wajib digunakan adalah?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>Hanya helm biasa</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>Helm SNI dan jaket pelindung</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>Tidak perlu menggunakan perlengkapan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">3. Bagaimana posisi duduk yang benar saat berkendara?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>Membungkuk ke depan</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>Tegak dan rileks</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>Miring ke samping</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="quizResult" class="hidden p-4 rounded-lg mb-4"></div>
+
+                <button type="button" onclick="submitQuiz()" 
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                    Submit Quiz
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'b'
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            // Calculate score
+            for (let question in correctAnswers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Calculate percentage
+            const percentage = (score / total) * 100;
+
+            // Update user progress
+            const userData = JSON.parse(localStorage.getItem('currentUser'));
+            if (userData) {
+                userData.progress.basic = percentage;
+                userData.quizScores.basic = percentage;
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+
+                // Update department analytics
+                updateDepartmentScore(userData.bagian, percentage);
+            }
+
+            // Show result
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.innerHTML = `
+                <div class="text-center">
+                    <p class="text-xl font-bold ${percentage >= 70 ? 'text-green-600' : 'text-red-600'}">
+                        Skor Anda: ${percentage}%
+                    </p>
+                    <p class="mt-2">
+                        ${percentage >= 70 
+                            ? 'Selamat! Anda telah menguasai materi ini.' 
+                            : 'Silakan pelajari kembali materi dan coba lagi.'}
+                    </p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+            resultDiv.classList.add(percentage >= 70 ? 'bg-green-100' : 'bg-red-100');
+        }
+
+        function updateDepartmentScore(department, score) {
+            try {
+                let analytics = JSON.parse(localStorage.getItem('analytics')) || {
+                    departmentAccess: {},
+                    departmentScores: {}
+                };
+
+                if (!analytics.departmentScores[department]) {
+                    analytics.departmentScores[department] = {
+                        totalScore: 0,
+                        userCount: 0
+                    };
+                }
+
+                analytics.departmentScores[department].totalScore += score;
+                analytics.departmentScores[department].userCount++;
+
+                localStorage.setItem('analytics', JSON.stringify(analytics));
+            } catch (error) {
+                console.error('Error updating department score:', error);
+            }
+        }
+    </script>
+</body>
+</html>
