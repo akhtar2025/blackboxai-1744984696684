@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Sleep - Safety Riding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="flex items-center">
+                        <i class="fas fa-motorcycle text-2xl text-blue-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Safety Riding</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800 mr-6">
+                        <i class="fas fa-arrow-left mr-2"></i>Kembali
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Module Header -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Micro Sleep</h1>
+            <p class="text-gray-600">Pelajari tentang bahaya micro sleep dan cara mencegahnya saat berkendara.</p>
+        </div>
+
+        <!-- Module Content -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <img src="https://images.pexels.com/photos/3807738/pexels-photo-3807738.jpeg" 
+                alt="Micro Sleep Awareness" 
+                class="w-full h-64 object-cover rounded-lg mb-6">
+
+            <div class="space-y-6">
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">1. Pengertian Micro Sleep</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Definisi:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Kondisi tertidur singkat (1-30 detik)</li>
+                                <li>Terjadi tanpa disadari</li>
+                                <li>Sangat berbahaya saat berkendara</li>
+                            </ul>
+                        </li>
+                        <li>Penyebab:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Kurang tidur</li>
+                                <li>Kelelahan fisik</li>
+                                <li>Berkendara monoton</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">2. Tanda-tanda Micro Sleep</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Gejala fisik:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Mata terasa berat</li>
+                                <li>Sering menguap</li>
+                                <li>Sulit berkonsentrasi</li>
+                                <li>Kepala terasa berat</li>
+                            </ul>
+                        </li>
+                        <li>Gejala saat berkendara:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Tidak ingat jalan yang dilalui</li>
+                                <li>Motor oleng atau tidak stabil</li>
+                                <li>Reaksi melambat</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. Cara Mencegah Micro Sleep</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Sebelum berkendara:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Tidur cukup (minimal 7 jam)</li>
+                                <li>Hindari berkendara larut malam</li>
+                                <li>Persiapkan fisik dengan baik</li>
+                            </ul>
+                        </li>
+                        <li>Saat berkendara:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Berhenti dan istirahat setiap 2 jam</li>
+                                <li>Minum air putih secukupnya</li>
+                                <li>Jika mengantuk, segera berhenti</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Quiz Micro Sleep</h2>
+            <form id="quizForm" class="space-y-6">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">1. Berapa lama durasi micro sleep dapat terjadi?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>1-30 detik</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>1-5 menit</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>5-10 menit</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">2. Apa yang harus dilakukan jika merasakan gejala micro sleep?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>Mempercepat laju kendaraan</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>Segera berhenti dan istirahat</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>Terus berkendara sampai tujuan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">3. Berapa jam minimal tidur yang dibutuhkan sebelum berkendara?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>4 jam</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>7 jam</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>5 jam</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="quizResult" class="hidden p-4 rounded-lg mb-4"></div>
+
+                <button type="button" onclick="submitQuiz()" 
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                    Submit Quiz
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        const correctAnswers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'b'
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            // Calculate score
+            for (let question in correctAnswers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Calculate percentage
+            const percentage = (score / total) * 100;
+
+            // Update user progress
+            const userData = JSON.parse(localStorage.getItem('currentUser'));
+            if (userData) {
+                userData.progress.microsleep = percentage;
+                userData.quizScores.microsleep = percentage;
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+
+                // Update department analytics
+                updateDepartmentScore(userData.bagian, percentage);
+            }
+
+            // Show result
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.innerHTML = `
+                <div class="text-center">
+                    <p class="text-xl font-bold ${percentage >= 70 ? 'text-green-600' : 'text-red-600'}">
+                        Skor Anda: ${percentage}%
+                    </p>
+                    <p class="mt-2">
+                        ${percentage >= 70 
+                            ? 'Selamat! Anda telah menguasai materi ini.' 
+                            : 'Silakan pelajari kembali materi dan coba lagi.'}
+                    </p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+            resultDiv.classList.add(percentage >= 70 ? 'bg-green-100' : 'bg-red-100');
+        }
+
+        function updateDepartmentScore(department, score) {
+            try {
+                let analytics = JSON.parse(localStorage.getItem('analytics')) || {
+                    departmentAccess: {},
+                    departmentScores: {}
+                };
+
+                if (!analytics.departmentScores[department]) {
+                    analytics.departmentScores[department] = {
+                        totalScore: 0,
+                        userCount: 0
+                    };
+                }
+
+                analytics.departmentScores[department].totalScore += score;
+                analytics.departmentScores[department].userCount++;
+
+                localStorage.setItem('analytics', JSON.stringify(analytics));
+            } catch (error) {
+                console.error('Error updating department score:', error);
+            }
+        }
+    </script>
+</body>
+</html>
