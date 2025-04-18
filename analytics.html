@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Safety Riding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="dashboard.html" class="flex items-center">
+                        <i class="fas fa-motorcycle text-2xl text-blue-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Safety Riding</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="dashboard.html" class="text-gray-600 hover:text-gray-800 mr-6">
+                        <i class="fas fa-arrow-left mr-2"></i>Kembali
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Analytics Header -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Analytics Dashboard</h1>
+            <p class="text-gray-600">Statistik akses dan performa per departemen</p>
+        </div>
+
+        <!-- Analytics Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Department Access -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-chart-bar text-blue-600 mr-2"></i>
+                    Akses per Departemen
+                </h2>
+                <div id="departmentAccess" class="space-y-4">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Average Scores -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-star text-blue-600 mr-2"></i>
+                    Rata-rata Skor Quiz
+                </h2>
+                <div id="departmentScores" class="space-y-4">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Top Performing Departments -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-trophy text-blue-600 mr-2"></i>
+                    Departemen dengan Performa Terbaik
+                </h2>
+                <div id="topDepartments" class="space-y-4">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Module Completion Stats -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                    Statistik Penyelesaian Modul
+                </h2>
+                <div id="moduleStats" class="space-y-4">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        function renderAnalytics() {
+            const analytics = JSON.parse(localStorage.getItem('analytics')) || {
+                departmentAccess: {},
+                departmentScores: {}
+            };
+
+            // Render Department Access
+            const departmentAccessDiv = document.getElementById('departmentAccess');
+            departmentAccessDiv.innerHTML = Object.entries(analytics.departmentAccess)
+                .map(([dept, count]) => `
+                    <div class="mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-700">${dept}</span>
+                            <span class="text-blue-600 font-semibold">${count} kali</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 rounded-full h-2" 
+                                style="width: ${Math.min((count / getMaxAccess(analytics.departmentAccess)) * 100, 100)}%">
+                            </div>
+                        </div>
+                    </div>
+                `).join('') || '<p class="text-gray-500">Belum ada data akses</p>';
+
+            // Render Department Scores
+            const departmentScoresDiv = document.getElementById('departmentScores');
+            departmentScoresDiv.innerHTML = Object.entries(analytics.departmentScores)
+                .map(([dept, data]) => {
+                    const avgScore = data.userCount > 0 
+                        ? Math.round(data.totalScore / data.userCount) 
+                        : 0;
+                    return `
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">${dept}</span>
+                                <span class="text-blue-600 font-semibold">${avgScore}%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 rounded-full h-2" 
+                                    style="width: ${avgScore}%">
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('') || '<p class="text-gray-500">Belum ada data skor</p>';
+
+            // Render Top Departments
+            const topDepartmentsDiv = document.getElementById('topDepartments');
+            const topDepts = Object.entries(analytics.departmentScores)
+                .map(([dept, data]) => ({
+                    name: dept,
+                    score: data.userCount > 0 ? Math.round(data.totalScore / data.userCount) : 0
+                }))
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 3);
+
+            topDepartmentsDiv.innerHTML = topDepts.length > 0 
+                ? topDepts.map((dept, index) => `
+                    <div class="flex items-center justify-between p-3 ${index < 2 ? 'border-b' : ''} border-gray-200">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <span class="text-blue-600 font-semibold">#${index + 1}</span>
+                            </div>
+                            <span class="font-medium text-gray-700">${dept.name}</span>
+                        </div>
+                        <span class="text-blue-600 font-semibold">${dept.score}%</span>
+                    </div>
+                `).join('')
+                : '<p class="text-gray-500">Belum ada data performa</p>';
+
+            // Render Module Stats
+            const moduleStatsDiv = document.getElementById('moduleStats');
+            const modules = ['basic', 'braking', 'hazard', 'microsleep'];
+            const moduleNames = {
+                basic: 'Dasar Safety Riding',
+                braking: 'Teknik Pengereman',
+                hazard: 'Antisipasi Bahaya',
+                microsleep: 'Micro Sleep'
+            };
+
+            moduleStatsDiv.innerHTML = modules.map(module => {
+                const completionCount = Object.values(analytics.departmentScores)
+                    .filter(data => data.userCount > 0).length;
+                const completionRate = analytics.departmentAccess 
+                    ? Math.round((completionCount / Object.keys(analytics.departmentAccess).length) * 100) || 0
+                    : 0;
+
+                return `
+                    <div class="mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-700">${moduleNames[module]}</span>
+                            <span class="text-blue-600 font-semibold">${completionRate}% selesai</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 rounded-full h-2" 
+                                style="width: ${completionRate}%">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getMaxAccess(accessData) {
+            return Math.max(...Object.values(accessData));
+        }
+
+        // Initial render
+        renderAnalytics();
+
+        // Update analytics every 30 seconds
+        setInterval(renderAnalytics, 30000);
+    </script>
+</body>
+</html>
