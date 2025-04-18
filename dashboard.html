@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Riding - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-motorcycle text-2xl text-blue-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-800">Safety Riding</span>
+                </div>
+                <div class="flex items-center">
+                    <a href="analytics.html" class="text-gray-600 hover:text-gray-800 mr-6">
+                        <i class="fas fa-chart-bar mr-2"></i>Analytics
+                    </a>
+                    <button onclick="logoutUser()" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Selamat Datang, <span id="userName"></span>!</h2>
+            <p class="text-gray-600">NPK: <span id="userNPK"></span> | Bagian: <span id="userBagian"></span></p>
+        </div>
+
+        <!-- Modules Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Basic Safety Module -->
+            <a href="modules/basic.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-200">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-shield-alt text-3xl text-blue-600 mr-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Dasar-dasar Safety Riding</h3>
+                </div>
+                <p class="text-gray-600">Pelajari prinsip dasar berkendara yang aman dan bertanggung jawab.</p>
+                <div class="mt-4 flex items-center">
+                    <div class="text-sm text-gray-500">Progress:</div>
+                    <div class="ml-2 flex-1 bg-gray-200 rounded-full h-2">
+                        <div id="basicProgress" class="bg-blue-600 rounded-full h-2" style="width: 0%"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Braking Module -->
+            <a href="modules/braking.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-200">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-brake-warning text-3xl text-blue-600 mr-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Teknik Pengereman</h3>
+                </div>
+                <p class="text-gray-600">Pelajari teknik pengereman yang efektif dan aman dalam berbagai situasi.</p>
+                <div class="mt-4 flex items-center">
+                    <div class="text-sm text-gray-500">Progress:</div>
+                    <div class="ml-2 flex-1 bg-gray-200 rounded-full h-2">
+                        <div id="brakingProgress" class="bg-blue-600 rounded-full h-2" style="width: 0%"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Hazard Module -->
+            <a href="modules/hazard.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-200">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-exclamation-triangle text-3xl text-blue-600 mr-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Antisipasi Kondisi Bahaya</h3>
+                </div>
+                <p class="text-gray-600">Pelajari cara mengantisipasi dan menghindari kondisi berbahaya di jalan.</p>
+                <div class="mt-4 flex items-center">
+                    <div class="text-sm text-gray-500">Progress:</div>
+                    <div class="ml-2 flex-1 bg-gray-200 rounded-full h-2">
+                        <div id="hazardProgress" class="bg-blue-600 rounded-full h-2" style="width: 0%"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Microsleep Module -->
+            <a href="modules/microsleep.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-200">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-bed text-3xl text-blue-600 mr-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Micro Sleep</h3>
+                </div>
+                <p class="text-gray-600">Pelajari bahaya micro sleep dan cara mencegahnya saat berkendara.</p>
+                <div class="mt-4 flex items-center">
+                    <div class="text-sm text-gray-500">Progress:</div>
+                    <div class="ml-2 flex-1 bg-gray-200 rounded-full h-2">
+                        <div id="microsleepProgress" class="bg-blue-600 rounded-full h-2" style="width: 0%"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // Load user data and update UI
+        window.addEventListener('load', function() {
+            const userData = JSON.parse(localStorage.getItem('currentUser'));
+            if (userData) {
+                document.getElementById('userName').textContent = userData.nama;
+                document.getElementById('userNPK').textContent = userData.npk;
+                document.getElementById('userBagian').textContent = userData.bagian;
+
+                // Update progress bars
+                document.getElementById('basicProgress').style.width = (userData.progress.basic || 0) + '%';
+                document.getElementById('brakingProgress').style.width = (userData.progress.braking || 0) + '%';
+                document.getElementById('hazardProgress').style.width = (userData.progress.hazard || 0) + '%';
+                document.getElementById('microsleepProgress').style.width = (userData.progress.microsleep || 0) + '%';
+            }
+        });
+    </script>
+</body>
+</html>
