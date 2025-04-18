@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antisipasi Kondisi Bahaya - Safety Riding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="flex items-center">
+                        <i class="fas fa-motorcycle text-2xl text-blue-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Safety Riding</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800 mr-6">
+                        <i class="fas fa-arrow-left mr-2"></i>Kembali
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Module Header -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Antisipasi Kondisi Bahaya</h1>
+            <p class="text-gray-600">Pelajari cara mengidentifikasi dan mengantisipasi kondisi berbahaya saat berkendara.</p>
+        </div>
+
+        <!-- Module Content -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <img src="https://images.pexels.com/photos/1715193/pexels-photo-1715193.jpeg" 
+                alt="Hazard Anticipation" 
+                class="w-full h-64 object-cover rounded-lg mb-6">
+
+            <div class="space-y-6">
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">1. Identifikasi Potensi Bahaya</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Kondisi jalan
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Jalan berlubang atau rusak</li>
+                                <li>Permukaan licin (hujan, oli)</li>
+                                <li>Material lepas (kerikil, pasir)</li>
+                            </ul>
+                        </li>
+                        <li>Perilaku pengguna jalan lain
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Pejalan kaki menyeberang mendadak</li>
+                                <li>Kendaraan yang berpindah jalur tiba-tiba</li>
+                                <li>Pengemudi yang tidak tertib</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">2. Teknik Antisipasi</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Scanning area
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Perhatikan kondisi jalan di depan</li>
+                                <li>Cek spion secara berkala</li>
+                                <li>Perhatikan blind spot</li>
+                            </ul>
+                        </li>
+                        <li>Jaga jarak aman
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Minimal 2 detik dari kendaraan depan</li>
+                                <li>Sesuaikan dengan kecepatan</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. Tindakan Preventif</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Kurangi kecepatan saat:
+                            <ul class="list-circle list-inside ml-6 mt-2">
+                                <li>Memasuki tikungan</li>
+                                <li>Kondisi jalan buruk</li>
+                                <li>Cuaca hujan</li>
+                            </ul>
+                        </li>
+                        <li>Siapkan rute alternatif</li>
+                        <li>Selalu siap dengan rem</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Quiz Antisipasi Bahaya</h2>
+            <form id="quizForm" class="space-y-6">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">1. Berapa jarak aman minimal yang harus dijaga dari kendaraan di depan?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>1 detik</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>2 detik</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>3 detik</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">2. Apa yang harus dilakukan saat memasuki tikungan?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>Menambah kecepatan</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>Mengurangi kecepatan</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>Mempertahankan kecepatan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p class="font-medium text-gray-800 mb-4">3. Apa yang perlu diperhatikan saat scanning area?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>Hanya kondisi jalan di depan</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>Hanya spion</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>Kondisi jalan, spion, dan blind spot</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="quizResult" class="hidden p-4 rounded-lg mb-4"></div>
+
+                <button type="button" onclick="submitQuiz()" 
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                    Submit Quiz
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'c'
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            // Calculate score
+            for (let question in correctAnswers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Calculate percentage
+            const percentage = (score / total) * 100;
+
+            // Update user progress
+            const userData = JSON.parse(localStorage.getItem('currentUser'));
+            if (userData) {
+                userData.progress.hazard = percentage;
+                userData.quizScores.hazard = percentage;
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+
+                // Update department analytics
+                updateDepartmentScore(userData.bagian, percentage);
+            }
+
+            // Show result
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.innerHTML = `
+                <div class="text-center">
+                    <p class="text-xl font-bold ${percentage >= 70 ? 'text-green-600' : 'text-red-600'}">
+                        Skor Anda: ${percentage}%
+                    </p>
+                    <p class="mt-2">
+                        ${percentage >= 70 
+                            ? 'Selamat! Anda telah menguasai materi ini.' 
+                            : 'Silakan pelajari kembali materi dan coba lagi.'}
+                    </p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+            resultDiv.classList.add(percentage >= 70 ? 'bg-green-100' : 'bg-red-100');
+        }
+
+        function updateDepartmentScore(department, score) {
+            try {
+                let analytics = JSON.parse(localStorage.getItem('analytics')) || {
+                    departmentAccess: {},
+                    departmentScores: {}
+                };
+
+                if (!analytics.departmentScores[department]) {
+                    analytics.departmentScores[department] = {
+                        totalScore: 0,
+                        userCount: 0
+                    };
+                }
+
+                analytics.departmentScores[department].totalScore += score;
+                analytics.departmentScores[department].userCount++;
+
+                localStorage.setItem('analytics', JSON.stringify(analytics));
+            } catch (error) {
+                console.error('Error updating department score:', error);
+            }
+        }
+    </script>
+</body>
+</html>
